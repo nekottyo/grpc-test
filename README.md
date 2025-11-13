@@ -28,5 +28,5 @@ grpc_tools_ruby_protoc  --ruby_out=ruby --grpc_out=ruby time.proto
 
 ruby client
 ```
-
+ruby ruby/client.rb
 ```
