@@ -1,4 +1,4 @@
-module github.com/nekottyo/gcpr-test
+module github.com/nekottyo/grpc-test
 
 go 1.25.3
 

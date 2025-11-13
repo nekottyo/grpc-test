@@ -4,7 +4,7 @@
 // - protoc             v6.33.0
 // source: time.proto
 
-package grpc
+package time
 
 import (
 	context "context"
