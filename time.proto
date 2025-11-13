@@ -1,0 +1,16 @@
+// time.proto
+
+syntax = "proto3";
+package grpctest.time.v1;
+
+
+message GetCurrentTimeRequest {
+}
+
+message GetCurrentTimeResponse {
+  string date = 1;
+}
+
+service TimeService{
+  rpc GetCurrentTime(GetCurrentTimeRequest) returns (GetCurrentTimeResponse);
+}
