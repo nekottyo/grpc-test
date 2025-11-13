@@ -2,6 +2,7 @@
 
 syntax = "proto3";
 package grpctest.time.v1;
+option go_package = "pkg/grpc";
 
 
 message GetCurrentTimeRequest {
