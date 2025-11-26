@@ -48,6 +48,19 @@ func (s *server) GetCurrentTime(_ context.Context, in *pb.GetCurrentTimeRequest)
 	return &pb.GetCurrentTimeResponse{Date: now.String()}, nil
 }
 
+func (s *server) GetCurrentTimeStream(in *pb.GetCurrentTimeRequest, stream pb.TimeService_GetCurrentTimeStreamServer) error {
+	count := 5
+	for i := 0; i < count; i++ {
+		if err := stream.Send(&pb.GetCurrentTimeResponse{
+			Date: time.Now().String(),
+		}); err != nil {
+			return err
+		}
+		time.Sleep(time.Second * 1)
+	}
+	return nil
+}
+
 func main() {
 	flag.Parse()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
